@@ -1,0 +1,24 @@
+<div>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Department</th>
+        </tr>
+        <tr *ngFor="let employee of employees(); let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.position}}</td>
+            <td>{{employee.department}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <input type="text" name="name" id="name" formControlName="name" placeholder="name">
+    <input type="text" name="position" id="position" formControlName="position" placeholder="position">
+    <input type="text" name="department" id="department" formControlName="department" placeholder="department">
+    <button type="submit">Add employee</button>
+</form>
