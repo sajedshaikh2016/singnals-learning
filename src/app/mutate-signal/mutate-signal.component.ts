@@ -16,6 +16,13 @@ export class MutateSignalComponent implements OnInit {
   ]);
   public employeeAdd = signal<boolean>(false);
 
+  public product = signal({
+    name: "Laptop",
+    category: "Electronics",
+    price: 20000,
+    rating: 4.5
+  });
+
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -37,5 +44,9 @@ export class MutateSignalComponent implements OnInit {
     this.employeeAdd.update(status => !status);
   }
 
+
+  public changeProductName(): void {
+    this.product.mutate(product => product.name = 'mobile');
+  }
 
 }

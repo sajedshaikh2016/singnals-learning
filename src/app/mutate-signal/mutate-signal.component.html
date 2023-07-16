@@ -1,3 +1,4 @@
+<h3>Mutate Array</h3>
 <div>
     <table>
         <tr>
@@ -14,9 +15,7 @@
         </tr>
     </table>
 </div>
-
 <hr>
-
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" autocomplete="off">
     <input type="text" name="name" id="name" formControlName="name" placeholder="name">
     <input type="text" name="position" id="position" formControlName="position" placeholder="position">
@@ -24,3 +23,23 @@
     <button type="submit">Add employee</button>
     <button type="button">Cancel</button>
 </form>
+<hr>
+
+<h3>Mutate Object</h3>
+<div>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>rating</th>
+        </tr>
+        <tr>
+            <td>{{product().name}}</td>
+            <td>{{product().category}}</td>
+            <td>{{product().price}}</td>
+            <td>{{product().rating}}</td>
+        </tr>
+    </table>
+</div>
+<button type="button" (click)="changeProductName()">Change name to mobile</button>
