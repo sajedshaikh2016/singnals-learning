@@ -1,18 +1,18 @@
 <div>First name</div>
-<p>{{firstName}}</p>
+<p>{{firstName()}}</p>
 
 <div>Last name</div>
-<p>{{lastName}}</p>
+<p>{{lastName()}}</p>
 
 <div>Full name</div>
-<p>{{fullName}}</p>
+<p>{{fullName()}}</p>
 
 <hr>
 
-<input type="text" name="firstName" id="first-name" [value]="firstName" placeholder="first name" #fname>
+<input type="text" name="firstName" id="first-name" [value]="firstName()" placeholder="first name" #fname>
 <button type="button" (click)="changeFirstName(fname.value)">Change first name</button>
 
 <hr>
 
-<input type="text" name="lastName" id="last-name" [value]="lastName" placeholder="last name" #lname>
+<input type="text" name="lastName" id="last-name" [value]="lastName()" placeholder="last name" #lname>
 <button type="button" (click)="changeLastName(lname.value)">Change last name</button>

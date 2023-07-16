@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public firstName: string = "Sajed";
-  public lastName: string = "Shaikh";
-  public fullName: string = this.firstName + " " + this.lastName;
+  public firstName = signal("Sajed");
+  public lastName = signal("Shaikh");
+  public fullName = computed(() => this.firstName() + " " + this.lastName());
 
   public changeFirstName(fName: string): void {
-    this.firstName = fName;
+    this.firstName.set(fName);
   }
 
   public changeLastName(lName: string): void {
-    this.lastName = lName;
+    this.lastName.set(lName);
   }
 }
