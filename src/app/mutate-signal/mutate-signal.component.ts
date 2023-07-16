@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, effect, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -22,6 +22,7 @@ export class MutateSignalComponent implements OnInit {
     price: 20000,
     rating: 4.5
   });
+
 
   constructor(private _formBuilder: FormBuilder) { }
 
@@ -48,5 +49,8 @@ export class MutateSignalComponent implements OnInit {
   public changeProductName(): void {
     this.product.mutate(product => product.name = 'mobile');
   }
+
+  public sideEffect = effect(() => console.log("Product name changed to", this.product().name));
+
 
 }
