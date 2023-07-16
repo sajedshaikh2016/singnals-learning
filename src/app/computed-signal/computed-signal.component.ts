@@ -6,9 +6,9 @@ import { Component, computed, signal } from '@angular/core';
   styleUrls: ['./computed-signal.component.scss']
 })
 export class ComputedSignalComponent {
-  public firstName = signal("Sajed");
-  public lastName = signal("Shaikh");
-  public fullName = computed(() => this.firstName() + " " + this.lastName());
+  public firstName = signal<string>("Sajed");
+  public lastName = signal<string>("Shaikh");
+  public fullName = computed<string>(() => this.firstName() + " " + this.lastName());
 
   public changeFirstName(fName: string): void {
     this.firstName.set(fName);
