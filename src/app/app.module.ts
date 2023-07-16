@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComputedSignalComponent } from './computed-signal/computed-signal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ComputedSignalComponent
   ],
   imports: [
     BrowserModule,
